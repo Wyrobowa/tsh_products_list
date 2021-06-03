@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from '../../tests';
 
-import { Login } from './Login';
+import Login from './Login';
 
 describe('Login', () => {
   test('Displays all information', async () => {

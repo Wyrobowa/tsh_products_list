@@ -7,6 +7,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.colors.grey};
     font-family: 'Nunito Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
     color: ${({ theme }) => theme.colors.black2};
   }
 `;

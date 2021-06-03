@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+// Actions
+import { requestGetProducts } from '../../actions/productsActions';
+
 // Components
 import Layout from '../../components/layout/Layout';
+import List from '../../components/list/List';
 
 // Reducers
 import { getProducts } from '../../reducers/productsReducer';
-import { requestGetProducts } from '../../actions/productsActions';
 
-export const Products = () => {
+const Products = () => {
   const products = useSelector(getProducts);
   const dispatch = useDispatch();
 
@@ -18,15 +21,9 @@ export const Products = () => {
 
   return (
     <Layout>
-      {products?.length > 0 && products.map(product => (
-        <div key={product.id}>
-          <div>{product.image}</div>
-          <div>{product.name}</div>
-          <div>{product.description}</div>
-          <div>{product.rating}</div>
-          <div>{product.active}</div>
-        </div>
-      ))}
+      <List data={products} />
     </Layout>
   );
 };
+
+export default Products;

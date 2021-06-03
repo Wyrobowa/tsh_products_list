@@ -4,6 +4,7 @@ export const variables = {
     black2: '#1A1B1D',
     blue: '#4460F7',
     grey: '#F2F2F2',
+    grey2: '#9194A5',
     white: '#FFFFFF',
   },
   paddings: {

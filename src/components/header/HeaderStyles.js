@@ -11,8 +11,6 @@ export const Header = styled.header`
 `;
 
 export const Title = styled(Link)`
-  font-style: normal;
-  font-weight: 600;
   font-size: 24px;
   line-height: 40px;
   text-decoration: none;
