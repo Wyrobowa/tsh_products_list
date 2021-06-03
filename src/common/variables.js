@@ -6,6 +6,7 @@ export const variables = {
     blue: '#4460F7',
   },
   paddings: {
+    button: '11px 24px',
     main: '0 108px',
   },
 };
