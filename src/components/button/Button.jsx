@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 // Styles
 import * as Styled from './ButtonStyles';
 
-const Button = ({ category, children, id, onClick, type }) => {
+const Button = ({ category, children, id, onClick, type, ...rest }) => {
   return (
     <Styled.Button
       category={category}
       id={id}
       onClick={onClick}
       type={type}
+      {...rest}
     >
       {children}
     </Styled.Button>

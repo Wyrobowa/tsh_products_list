@@ -16,7 +16,7 @@ const Products = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(requestGetProducts());
+    dispatch(requestGetProducts('limit=5'));
   }, [dispatch]);
 
   return (

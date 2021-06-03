@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ButtonLink = WrappedComponent => ({ category, children, history, id, to, type }) => {
+const ButtonLink = WrappedComponent => ({ category, children, history, id, to, type, ...rest }) => {
   const handleOnClick = () => {
     history.push(to);
   };
@@ -11,6 +11,7 @@ const ButtonLink = WrappedComponent => ({ category, children, history, id, to, t
       id={id}
       onClick={handleOnClick}
       type={type}
+      {...rest}
     >
       {children}
     </WrappedComponent>

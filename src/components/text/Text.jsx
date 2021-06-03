@@ -7,11 +7,12 @@ import { variables } from '../../common/variables';
 // Styles
 import * as Styled from './TextStyles';
 
-const Text = ({ bold, color, children, htmlTag, size }) => {
+const Text = ({ bold, className, color, children, htmlTag, size }) => {
   return (
     <Styled.Text
       as={htmlTag}
       bold={bold}
+      className={className}
       color={color}
       size={size}
     >
@@ -22,6 +23,7 @@ const Text = ({ bold, color, children, htmlTag, size }) => {
 
 Text.propTypes = {
   bold: PropTypes.bool,
+  className: PropTypes.string,
   color: PropTypes.string,
   children: PropTypes.node.isRequired,
   htmlTag: PropTypes.string,
@@ -30,6 +32,7 @@ Text.propTypes = {
 
 Text.defaultProps = {
   bold: false,
+  className: '',
   color: variables.colors.black2,
   htmlTag: 'h1',
   size: 16,
