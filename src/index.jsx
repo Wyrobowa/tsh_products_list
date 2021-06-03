@@ -1,14 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 
-import { AppProviders } from './providers/AppProviders';
+// Configs
+import configureStore from './configureStore';
+
+// Containers
 import { App } from './app/App';
+
+// Providers
+import { AppProviders } from './providers/AppProviders';
+
+// ServiceWorker
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <AppProviders>
-    <App />
-  </AppProviders>,
+const store = configureStore();
+
+render(
+  <Provider store={store}>
+    <AppProviders>
+      <App />
+    </AppProviders>
+  </Provider>,
   document.getElementById('root'),
 );
 

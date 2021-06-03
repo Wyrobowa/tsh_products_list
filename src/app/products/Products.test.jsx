@@ -1,13 +1,15 @@
 import React from 'react';
 
-import { render } from '../../tests';
-
+// Containers
 import { Products } from './Products';
+
+// Tests
+import { render } from '../../tests';
 
 describe('Products', () => {
   test('Displays page header', async () => {
-    const { getByText } = render(<Products />);
+    const { container } = render(<Products />);
 
-    expect(getByText('Products list')).toBeInTheDocument();
+    expect(container.firstChild).toBeTruthy();
   });
 });
