@@ -5,8 +5,8 @@ export const GlobalStyles = createGlobalStyle`
   ${styledNormalize}
   
   body {
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.grey};
     font-family: 'Nunito Sans', sans-serif;
-    color: ${({ theme }) => theme.colors.fontMain};
+    color: ${({ theme }) => theme.colors.black2};
   }
 `;
