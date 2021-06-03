@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Styles
 import * as Styled from './ButtonStyles';
 
-export const Button = ({ category, children, id, onClick, type }) => {
+const Button = ({ category, children, id, onClick, type }) => {
   return (
     <Styled.Button
       category={category}
@@ -31,3 +31,5 @@ Button.defaultProps = {
   onClick: null,
   type: 'button',
 };
+
+export default Button;

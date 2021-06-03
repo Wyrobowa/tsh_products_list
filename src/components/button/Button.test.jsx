@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { render } from '../../tests';
+// Components
+import Button from './Button';
 
-import { Button } from './Button';
+// Tests
+import { render } from '../../tests';
 
 describe('Button', () => {
   test('Displays button', async () => {

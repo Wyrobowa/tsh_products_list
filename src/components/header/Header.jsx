@@ -2,8 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 // Components
-import { Button } from '../button/Button';
-import { ButtonLink } from '../buttonLink/ButtonLink';
+import Button from '../button/Button';
+import ButtonLink from '../buttonLink/ButtonLink';
 import { HeaderInfo } from './Header.enum';
 
 // Enums
@@ -14,7 +14,7 @@ import * as Styled from './HeaderStyles';
 
 const ButtonLinkHOC = ButtonLink(Button);
 
-export const Header = () => {
+const Header = () => {
   const history = useHistory();
 
   return (
@@ -31,3 +31,5 @@ export const Header = () => {
     </Styled.Header>
   );
 };
+
+export default Header;
