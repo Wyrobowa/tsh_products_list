@@ -7,10 +7,7 @@ export const ListItem = styled.div`
   flex-flow: column;
   justify-content: space-between;
   display: flex;
-  margin: 5px;
   box-sizing: border-box;
-  width: 210px;
-  height: 400px;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -49,6 +46,5 @@ export const TextField = styled(Text)`
 `;
 
 export const Image = styled.img`
-  max-width: 210px;
-  max-height: 160px;
+  width: 100%;
 `;
