@@ -1,9 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-
-// Configs
-import configureStore from './configureStore';
 
 // Containers
 import { App } from './app/App';
@@ -14,14 +10,10 @@ import { AppProviders } from './providers/AppProviders';
 // ServiceWorker
 import * as serviceWorker from './serviceWorker';
 
-const store = configureStore();
-
 render(
-  <Provider store={store}>
-    <AppProviders>
-      <App />
-    </AppProviders>
-  </Provider>,
+  <AppProviders>
+    <App />
+  </AppProviders>,
   document.getElementById('root'),
 );
 
