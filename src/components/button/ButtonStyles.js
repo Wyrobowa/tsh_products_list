@@ -17,6 +17,13 @@ export const Button = styled.button`
     color: ${theme.colors.blue};
   `}
   
+  ${({ theme, category }) => category && category === 'search' && `
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: ${theme.colors.black2};
+  `}
+  
   &:disabled {
     border-color: ${({ theme }) => theme.colors.grey2};
     background-color: ${({ theme }) => theme.colors.grey2};

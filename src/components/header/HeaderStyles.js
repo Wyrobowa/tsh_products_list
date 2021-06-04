@@ -10,7 +10,13 @@ export const Header = styled.header`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
+export const Box = styled.div`
+  align-items: center;
+  display: flex;
+`;
+
 export const Title = styled(Link)`
+  margin-right: 120px;
   font-size: 24px;
   line-height: 40px;
   text-decoration: none;

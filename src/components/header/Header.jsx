@@ -4,10 +4,11 @@ import { useHistory } from 'react-router-dom';
 // Components
 import Button from '../button/Button';
 import ButtonLink from '../buttonLink/ButtonLink';
-import { HeaderInfo } from './Header.enum';
+import Search from '../search/Search';
 
 // Enums
 import { AppRoute } from '../../routing/AppRoute.enum';
+import { HeaderInfo } from './Header.enum';
 
 // Styles
 import * as Styled from './HeaderStyles';
@@ -19,7 +20,10 @@ const Header = () => {
 
   return (
     <Styled.Header>
-      <Styled.Title to={AppRoute.home}>{HeaderInfo.title}</Styled.Title>
+      <Styled.Box>
+        <Styled.Title to={AppRoute.home}>{HeaderInfo.title}</Styled.Title>
+        <Search />
+      </Styled.Box>
       <ButtonLinkHOC
         category="login"
         history={history}
