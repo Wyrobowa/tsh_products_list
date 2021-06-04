@@ -1,7 +1,7 @@
 const buildUrl = (endpoint, query) => {
   const urlWithQuery = query ? `${endpoint}?${query}` : endpoint;
-  return `${process.env.REACT_APP_API_URL}${urlWithQuery}`
-}
+  return `${process.env.REACT_APP_API_URL}${urlWithQuery}`;
+};
 
 const requester = async (url, requestType) => {
   const options = {

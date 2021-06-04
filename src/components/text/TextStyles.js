@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Text = styled.h1`
+export const Text = styled.p`
   justify-content: flex-start;
   display: flex;
   margin: 0;

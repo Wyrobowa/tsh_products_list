@@ -18,8 +18,8 @@ const Text = ({ bold, className, color, children, htmlTag, size }) => {
     >
       {children}
     </Styled.Text>
-  )
-}
+  );
+};
 
 Text.propTypes = {
   bold: PropTypes.bool,
@@ -34,7 +34,7 @@ Text.defaultProps = {
   bold: false,
   className: '',
   color: variables.colors.black2,
-  htmlTag: 'h1',
+  htmlTag: 'p',
   size: 16,
 };
 

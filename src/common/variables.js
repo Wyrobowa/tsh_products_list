@@ -13,4 +13,7 @@ export const variables = {
     button: '11px 24px',
     main: '0 100px',
   },
+  paths: {
+    img: 'common/img/',
+  },
 };

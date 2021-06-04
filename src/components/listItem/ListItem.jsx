@@ -23,10 +23,10 @@ const ListItem = ({ item }) => {
       <Styled.BoxWrapper>
         <Styled.Image src={item.image} alt={item.name} />
         <Styled.Box>
-          <Styled.TextField bold htmlTag="p" size={18}>
+          <Styled.TextField bold size={18}>
             {item.name}
           </Styled.TextField>
-          <Styled.TextField color={variables.colors.grey2} htmlTag="p" size={14}>
+          <Styled.TextField color={variables.colors.grey2} size={14}>
             {item.description}
           </Styled.TextField>
         </Styled.Box>

@@ -5,6 +5,7 @@
   },
   "extends": ["react-app"],
   "rules": {
+    "comma-dangle": ["error", "always-multiline"],
     "quotes": [2, "single", { "avoidEscape": true }]
   }
 }
