@@ -9,7 +9,7 @@ export const Search = styled.form`
 `;
 
 export const SearchField = styled(Field)`
-  width: 390px;
+  min-width: 300px;
   height: 48px;
 `;
 

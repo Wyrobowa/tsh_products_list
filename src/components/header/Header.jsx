@@ -12,6 +12,7 @@ import { HeaderInfo } from './Header.enum';
 
 // Styles
 import * as Styled from './HeaderStyles';
+import Filters from '../filters/Filters';
 
 const ButtonLinkHOC = ButtonLink(Button);
 
@@ -23,6 +24,7 @@ const Header = () => {
       <Styled.Box>
         <Styled.Title to={AppRoute.home}>{HeaderInfo.title}</Styled.Title>
         <Search />
+        <Filters />
       </Styled.Box>
       <ButtonLinkHOC
         category="login"

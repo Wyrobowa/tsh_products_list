@@ -5,6 +5,10 @@ export const Input = styled.input`
   border-radius: 8px;
   box-sizing: border-box;
   padding: 15px;
+  
+  &:hover, &:focus {
+    background-color: ${({ theme }) => theme.colors.grey};
+  }
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.black2};

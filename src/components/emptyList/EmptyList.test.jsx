@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Components
-import EmptyList from './ListItem';
+import EmptyList from './EmptyList';
 
 // Tests
 import { render } from '../../tests';

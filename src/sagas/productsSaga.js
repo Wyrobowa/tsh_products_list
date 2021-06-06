@@ -1,15 +1,34 @@
-import { takeEvery } from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 // Actions
-import { getProductsSuccessful, getProductsUnsuccessful, REQUEST_GET_PRODUCTS } from '../actions/productsActions';
+import * as actions from '../actions/productsActions';
 
-// Sagas
-import { requestGetDataSaga } from './sagasHelper';
+// Helpers
+import { buildRequestQuery } from '../helpers/requestQueryHelper';
+
+// Reducers
+import { getParams } from '../reducers/productsReducer';
+
+// Services
+import { endpoints } from '../services/consts';
+import { getData } from '../services/requestService';
+
+export function* getProducts() {
+  const params = yield select(getParams);
+  const requestQuery = buildRequestQuery(params);
+
+  try {
+    const requestData = yield call(getData, endpoints.products, requestQuery);
+
+    yield put(actions.getProductsSuccessful(requestData));
+  } catch (error) {
+    yield put(actions.getProductsUnsuccessful());
+  }
+}
 
 export function* watchGetProducts() {
-  yield takeEvery(REQUEST_GET_PRODUCTS, requestGetDataSaga(
-    getProductsSuccessful,
-    getProductsUnsuccessful,
-    'products',
-  ));
+  yield takeLatest([
+    actions.REQUEST_GET_PRODUCTS,
+    actions.SET_FILTERS,
+  ], getProducts);
 }

@@ -13,10 +13,13 @@ export const Header = styled.header`
 export const Box = styled.div`
   align-items: center;
   display: flex;
+  
+  > * {
+    margin-right: 10px;
+  }
 `;
 
 export const Title = styled(Link)`
-  margin-right: 120px;
   font-size: 24px;
   line-height: 40px;
   text-decoration: none;

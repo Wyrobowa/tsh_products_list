@@ -1,35 +1,38 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Actions
-import { requestGetProducts } from '../../actions/productsActions';
+import { requestGetProducts, setSearch } from '../../actions/productsActions';
 
 // Icons
 import icon from '../../common/icons/search.png';
+
+// Reducers
+import { getParams } from '../../reducers/productsReducer';
 
 // Styles
 import * as Styled from './SearchStyles';
 
 const Search = () => {
-  const [value, setValue] = useState('');
+  const params = useSelector(getParams)
   const dispatch = useDispatch();
 
   const handleOnChange = ({ target }) => {
     const { value } = target;
-    setValue(value);
+    dispatch(setSearch(value));
   };
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
 
-    if (value) {
-      dispatch(requestGetProducts(`search=${value}`));
+    if (params?.search) {
+      dispatch(requestGetProducts());
     }
   };
 
   return (
     <Styled.Search>
-      <Styled.SearchField id="Search" onChange={handleOnChange} placeholder="Search" value={value} />
+      <Styled.SearchField id="Search" onChange={handleOnChange} placeholder="Search" value={params.search} />
       <Styled.SearchButton category="search" id="SearchButton" onClick={handleOnSubmit} type="submit">
         <Styled.Image src={icon} alt="Search" />
       </Styled.SearchButton>

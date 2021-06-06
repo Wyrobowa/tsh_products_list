@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Actions
-import { requestGetProducts } from '../../actions/productsActions';
+import { setFilters } from '../../actions/productsActions';
 
 // Components
 import Layout from '../../components/layout/Layout';
@@ -16,7 +16,7 @@ const Products = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(requestGetProducts('limit=5'));
+    dispatch(setFilters('limit', 5));
   }, [dispatch]);
 
   return (
