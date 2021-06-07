@@ -14,7 +14,7 @@ export const Input = styled.input`
 
 export const Checkmark = styled.span`
   position: absolute;
-  top: -3px;
+  top: 0;
   left: 0;
   border: 1px solid ${({ theme }) => theme.colors.grey4};
   border-radius: 4px;
@@ -33,7 +33,9 @@ export const Checkmark = styled.span`
 export const Label = styled.label`
   position: relative;
   display: block;
-  padding-left: 35px;
+  margin-right: 10px;
+  padding-left: 30px;
+  line-height: 24px;
 
   &:hover {
     ${Input} ~ ${Checkmark} {

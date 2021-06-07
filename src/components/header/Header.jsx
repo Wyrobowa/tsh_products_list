@@ -21,19 +21,21 @@ const Header = () => {
 
   return (
     <Styled.Header>
+      <Styled.Title to={AppRoute.home}>{HeaderInfo.title}</Styled.Title>
       <Styled.Box>
-        <Styled.Title to={AppRoute.home}>{HeaderInfo.title}</Styled.Title>
         <Search />
         <Filters />
       </Styled.Box>
-      <ButtonLinkHOC
-        category="login"
-        history={history}
-        id="Login"
-        to={AppRoute.login}
-      >
-        {HeaderInfo.loginButton}
-      </ButtonLinkHOC>
+      <Styled.LoginButton>
+        <ButtonLinkHOC
+          category="login"
+          history={history}
+          id="Login"
+          to={AppRoute.login}
+        >
+          {HeaderInfo.loginButton}
+        </ButtonLinkHOC>
+      </Styled.LoginButton>
     </Styled.Header>
   );
 };

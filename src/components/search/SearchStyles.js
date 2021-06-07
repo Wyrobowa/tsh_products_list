@@ -6,10 +6,16 @@ import Field from '../field/Field';
 
 export const Search = styled.form`
   position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+
+  @media ${({ theme }) => theme.mediaQueries.tablet} {
+    margin: 0 20px 0 0;
+  }
 `;
 
 export const SearchField = styled(Field)`
-  min-width: 300px;
+  width: 100%;
   height: 48px;
 `;
 

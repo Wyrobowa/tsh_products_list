@@ -1,3 +1,13 @@
+export const breakpoints = {
+  mobile: 350,
+  tablet: 768,
+  laptop: 1024,
+  laptopM: 1280,
+  laptopL: 1440,
+  desktop: 1600,
+  desktopL: 1800,
+};
+
 export const variables = {
   colors: {
     black: '#000000',
@@ -10,9 +20,20 @@ export const variables = {
     orange: '#F9A52B',
     white: '#FFFFFF',
   },
+  mediaQueries: {
+    mobile: `screen and (min-width: ${breakpoints.mobile}px)`,
+    tablet: `screen and (min-width: ${breakpoints.tablet}px)`,
+    laptop: `screen and (min-width: ${breakpoints.laptop}px)`,
+    laptopM: `screen and (min-width: ${breakpoints.laptopM}px)`,
+    laptopL: `screen and (min-width: ${breakpoints.laptopL}px)`,
+    desktop: `screen and (min-width: ${breakpoints.desktop}px)`,
+    desktopL: `screen and (min-width: ${breakpoints.desktopL}px)`,
+  },
   paddings: {
     button: '11px 24px',
-    main: '0 100px',
+    mainMobile: '0 25px',
+    mainTablet: '0 50px',
+    mainLaptop: '0 108px',
   },
   paths: {
     img: 'common/img/',

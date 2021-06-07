@@ -10,6 +10,9 @@ import Checkbox from '../checkbox/Checkbox';
 // Reducers
 import { getParams } from '../../reducers/productsReducer';
 
+// Styles
+import * as Styled from './FiltersStyles';
+
 const Filters = () => {
   const params = useSelector(getParams);
   const dispatch = useDispatch();
@@ -20,10 +23,10 @@ const Filters = () => {
   };
 
   return (
-    <>
+    <Styled.Filters>
       <Checkbox checked={params.active} id="Active" label="Active" onChange={handleOnChange} />
       <Checkbox checked={params.promo} id="Promo" label="Promo" onChange={handleOnChange} />
-    </>
+    </Styled.Filters>
   );
 };
 

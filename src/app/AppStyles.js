@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 
+// Common
+import { breakpoints } from '../common/variables';
+
 export const GlobalStyles = createGlobalStyle`
   ${styledNormalize}
   
@@ -10,5 +13,9 @@ export const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-weight: normal;
     color: ${({ theme }) => theme.colors.black2};
+  }
+  
+  #root {
+    min-width: ${breakpoints.mobile}px;
   }
 `;
