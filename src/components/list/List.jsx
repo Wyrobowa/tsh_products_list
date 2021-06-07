@@ -7,19 +7,25 @@ import ListItem from '../listItem/ListItem';
 
 // Styles
 import * as Styled from './ListStyles';
+import Pagination from '../pagination/Pagination';
 
-const List = ({ data }) => {
+const List = ({ data, pagination }) => {
   return (
-    <Styled.List>
+    <>
       {data.length > 0
-      ? (
-        data.map(item => (
-          <ListItem item={item} key={item.id} />
-        ))
-      ) : (
-        <EmptyList />
-      )}
-    </Styled.List>
+        ? (
+          <>
+            <Styled.List>
+              {data.map(item => (
+                <ListItem item={item} key={item.id} />
+              ))}
+            </Styled.List>
+            <Pagination data={pagination} />
+          </>
+        ) : (
+          <EmptyList />
+        )}
+    </>
   );
 };
 

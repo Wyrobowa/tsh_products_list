@@ -7,7 +7,15 @@ const initState = {
     search: '',
     active: false,
     promo: false,
-    pagination: null,
+    page: null,
+    limit: null,
+  },
+  pagination: {
+    currentPage: null,
+    itemCount: null,
+    itemsPerPage: null,
+    totalItems: null,
+    totalPages: null,
   },
 };
 
@@ -17,6 +25,14 @@ const products = (state = initState, action) => {
       return {
         ...state,
         products: action.payload.items,
+        params: {
+          ...state.params,
+          page: action.payload.meta?.currentPage,
+          limit: action.payload.meta?.itemsPerPage,
+        },
+        pagination: {
+          ...action.payload.meta,
+        },
       };
     case actions.SET_SEARCH:
       return {
@@ -34,6 +50,15 @@ const products = (state = initState, action) => {
           [action.name]: action.data,
         },
       };
+    case actions.SET_PAGINATION:
+      return {
+        ...state,
+        params: {
+          ...state.params,
+          page: action.page,
+          limit: action.limit,
+        },
+      };
     default:
       return state;
   }
@@ -41,5 +66,6 @@ const products = (state = initState, action) => {
 
 export const getProducts = state => state.products.products;
 export const getParams = state => state.products.params;
+export const getPagination = state => state.products.pagination;
 
 export default products;

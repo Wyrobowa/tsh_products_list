@@ -30,5 +30,6 @@ export function* watchGetProducts() {
   yield takeLatest([
     actions.REQUEST_GET_PRODUCTS,
     actions.SET_FILTERS,
+    actions.SET_PAGINATION,
   ], getProducts);
 }

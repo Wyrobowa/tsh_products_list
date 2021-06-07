@@ -23,9 +23,17 @@ const data = [
   },
 ];
 
+const pagination = {
+  currentPage: 2,
+  itemCount: 3,
+  itemsPerPage: 3,
+  totalItems: 8,
+  totalPages: 3,
+};
+
 describe('List', () => {
   test('Displays List', async () => {
-    const { container } = render(<List data={data} />);
+    const { container } = render(<List data={data} pagination={pagination} />);
 
     expect(container.firstChild).toBeTruthy();
   });

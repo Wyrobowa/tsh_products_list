@@ -3,6 +3,7 @@ export const GET_PRODUCTS_UNSUCCESSFUL = 'GET_PRODUCTS_UNSUCCESSFUL';
 export const REQUEST_GET_PRODUCTS = 'REQUEST_GET_PRODUCTS';
 export const SET_SEARCH = 'SET_SEARCH';
 export const SET_FILTERS = 'SET_FILTERS';
+export const SET_PAGINATION = 'SET_PAGINATION';
 
 export const getProductsSuccessful = payload => ({
   type: GET_PRODUCTS_SUCCESSFUL,
@@ -27,4 +28,10 @@ export const setFilters = (name, data) => ({
   type: SET_FILTERS,
   name,
   data,
+});
+
+export const setPagination = (page, limit) => ({
+  type: SET_PAGINATION,
+  page,
+  limit,
 });

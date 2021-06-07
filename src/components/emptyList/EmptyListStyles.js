@@ -5,6 +5,12 @@ import { Text } from '../text/TextStyles';
 
 export const EmptyList = styled.div`
   flex-flow: column;
+  align-items: center;
+  display: flex;
+`;
+
+export const Box = styled.div`
+  flex-flow: column;
   justify-self: center;
   justify-content: center;
   align-items: center;
@@ -12,7 +18,7 @@ export const EmptyList = styled.div`
   width: 600px;
   height: 344px;
   background-color: ${({ theme }) => theme.colors.white};
-  
+
   ${Text} {
     margin-top: 10px;
   }
