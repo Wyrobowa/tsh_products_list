@@ -15,12 +15,13 @@ import { getData } from '../services/requestService';
 import { hideLoader, showLoader } from '../actions/appStatusActions';
 
 export function* getProducts() {
+  const token = localStorage.getItem('bearerToken');
   const params = yield select(getParams);
   const requestQuery = buildRequestQuery(params);
 
   try {
     yield put(showLoader());
-    const requestData = yield call(getData, endpoints.products, requestQuery);
+    const requestData = yield call(getData, token, endpoints.products, requestQuery);
 
     yield put(actions.getProductsSuccessful(requestData));
     yield put(hideLoader());

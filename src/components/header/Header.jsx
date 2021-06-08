@@ -1,23 +1,35 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+// Actions
+import { requestGetUser } from '../../actions/userActions';
 
 // Components
-import Button from '../button/Button';
-import ButtonLink from '../buttonLink/ButtonLink';
+import Filters from '../filters/Filters';
 import Search from '../search/Search';
+import UserWidget from '../userWidget/UserWidget';
 
 // Enums
 import { AppRoute } from '../../routing/AppRoute.enum';
 import { HeaderInfo } from './Header.enum';
 
+// Reducers
+import { getUser } from '../../reducers/userReducer';
+
 // Styles
 import * as Styled from './HeaderStyles';
-import Filters from '../filters/Filters';
-
-const ButtonLinkHOC = ButtonLink(Button);
 
 const Header = () => {
-  const history = useHistory();
+  const user = useSelector(getUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = localStorage.getItem('bearerToken');
+
+    if (token) {
+      dispatch(requestGetUser());
+    }
+  }, [dispatch]);
 
   return (
     <Styled.Header>
@@ -26,16 +38,7 @@ const Header = () => {
         <Search />
         <Filters />
       </Styled.Box>
-      <Styled.LoginButton>
-        <ButtonLinkHOC
-          category="login"
-          history={history}
-          id="Login"
-          to={AppRoute.login}
-        >
-          {HeaderInfo.loginButton}
-        </ButtonLinkHOC>
-      </Styled.LoginButton>
+      <UserWidget user={user} />
     </Styled.Header>
   );
 };

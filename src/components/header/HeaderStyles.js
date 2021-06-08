@@ -50,10 +50,14 @@ export const Title = styled(Link)`
   color: ${({ theme }) => theme.colors.black2};
 `;
 
-export const LoginButton = styled.div`
+export const User = styled.div`
   grid-area: login;
   justify-self: end;
   align-self: center;
   width: fit-content;
   height: fit-content;
+`;
+
+export const Avatar = styled.img`
+  width: 48px;
 `;

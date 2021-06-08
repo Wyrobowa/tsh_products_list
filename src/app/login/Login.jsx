@@ -36,7 +36,7 @@ const Login = () => {
 
   useEffect(() => {
     if (loginStatus.loggedIn) {
-      history.push('/');
+      history.push(AppRoute.home);
     }
   }, [history, loginStatus.loggedIn]);
 

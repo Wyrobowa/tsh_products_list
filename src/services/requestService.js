@@ -3,10 +3,11 @@ const buildUrl = (endpoint, query) => {
   return `${process.env.REACT_APP_API_URL}${urlWithQuery}`;
 };
 
-const requester = async (url, requestType, data) => {
+const requester = async (token, url, requestType, data) => {
   const options = {
     method: requestType,
     headers: {
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
     ...(data && { body: JSON.stringify(data) }),
@@ -25,12 +26,12 @@ const requester = async (url, requestType, data) => {
   }
 };
 
-export const getData = async (endpoint, query) => {
+export const getData = async (token, endpoint, query) => {
   const url = buildUrl(endpoint, query);
-  return requester(url, 'GET');
+  return requester(token, url, 'GET');
 };
 
-export const sendData = async (endpoint, data, query) => {
+export const sendData = async (token, endpoint, data, query) => {
   const url = buildUrl(endpoint, query);
-  return requester(url, 'POST', data);
+  return requester(token, url, 'POST', data);
 };

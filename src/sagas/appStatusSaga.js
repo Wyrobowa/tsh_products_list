@@ -8,9 +8,11 @@ import { hideLoader, showLoader } from '../actions/appStatusActions';
 import { sendData } from '../services/requestService';
 
 export function* login(action) {
+  const token = localStorage.getItem('bearerToken');
+
   try {
     yield put(showLoader());
-    const requestData = yield call(sendData, 'users/login', action.credentials);
+    const requestData = yield call(sendData, token, 'users/login', action.credentials);
 
     if (requestData?.access_token) {
       localStorage.setItem('bearerToken', requestData.access_token);

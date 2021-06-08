@@ -32,8 +32,14 @@ const Search = () => {
 
   return (
     <Styled.Search>
-      <Styled.SearchField id="Search" onChange={handleOnChange} placeholder="Search" type="search" value={params.search} />
-      <Styled.SearchButton category="search" id="SearchButton" onClick={handleOnSubmit} type="submit">
+      <Styled.SearchField
+        id="Search"
+        onChange={handleOnChange}
+        placeholder="Search"
+        type="search"
+        value={params.search}
+      />
+      <Styled.SearchButton category="transparent" id="SearchButton" onClick={handleOnSubmit} type="submit">
         <Styled.Image src={icon} alt="Search" />
       </Styled.SearchButton>
     </Styled.Search>

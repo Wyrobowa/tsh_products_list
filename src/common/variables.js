@@ -13,6 +13,7 @@ export const variables = {
     black: '#000000',
     black2: '#1A1B1D',
     blue: '#4460F7',
+    blue2: '#2140E8',
     grey: '#F2F2F2',
     grey2: '#9194A5',
     grey3: '#B1B5C9',
