@@ -11,15 +11,19 @@ export const Input = styled.input`
   }
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.black2};
+    color: ${({ theme }) => theme.colors.grey2};
     opacity: 1;
   }
 
   &:-ms-input-placeholder {
-    color: ${({ theme }) => theme.colors.black2};
+    color: ${({ theme }) => theme.colors.grey2};
   }
 
   &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.colors.black2};
+    color: ${({ theme }) => theme.colors.grey2};
   }
+`;
+
+export const Label = styled.label`
+  margin-bottom: 8px;
 `;

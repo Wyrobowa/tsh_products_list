@@ -18,6 +18,8 @@ export const variables = {
     grey3: '#B1B5C9',
     grey4: '#E0E2EA',
     orange: '#F9A52B',
+    red: '#CD5C5C',
+    green: '#3CB371',
     white: '#FFFFFF',
   },
   mediaQueries: {

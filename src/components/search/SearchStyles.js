@@ -17,6 +17,18 @@ export const Search = styled.form`
 export const SearchField = styled(Field)`
   width: 100%;
   height: 48px;
+  
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.black2};
+  }
+
+  &:-ms-input-placeholder {
+    color: ${({ theme }) => theme.colors.black2};
+  }
+
+  &::-ms-input-placeholder {
+    color: ${({ theme }) => theme.colors.black2};
+  }
 `;
 
 export const SearchButton = styled(Button)`
