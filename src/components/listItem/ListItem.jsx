@@ -8,6 +8,7 @@ import { variables } from '../../common/variables';
 // Components
 import Button from '../button/Button';
 import ButtonLink from '../buttonLink/ButtonLink';
+import Promo from '../promo/Promo';
 import Rating from '../rating/Rating';
 
 // Styles
@@ -22,6 +23,7 @@ const ListItem = ({ item }) => {
     <Styled.ListItem>
       <Styled.BoxWrapper>
         <Styled.Image src={item.image} alt={item.name} />
+        {item.promo && <Promo />}
         <Styled.Box>
           <Styled.TextField bold size={18}>
             {item.name}

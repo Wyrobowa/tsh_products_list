@@ -32,6 +32,7 @@ export const UserMenu = styled.div`
   right: 0;
   flex-flow: column;
   display: flex;
+  border-radius: 4px;
   min-width: 184px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 8px 32px rgba(17, 18, 20, 0.158514);

@@ -1,6 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+// Actions
+import { clearUser } from '../../actions/userActions';
+import { clearLogin } from '../../actions/appStatusActions';
 
 // Components
 import ButtonLink from '../buttonLink/ButtonLink';
@@ -10,27 +14,32 @@ import Button from '../button/Button';
 import { AppRoute } from '../../routing/AppRoute.enum';
 import { HeaderInfo } from '../header/Header.enum';
 
+// Hooks
+import { useOnClickOutside } from '../../hooks/useOnClickOutside';
+
+// Reducers
+import { getHeaderLoaderStatus } from '../../reducers/appStatusReducer';
+
 // Styled
 import * as Styled from './UserWidgetStyles';
-import { clearUser } from '../../actions/userActions';
-import { clearLogin } from '../../actions/appStatusActions';
-import { useOnClickOutside } from '../../hooks/useOnClickOutside';
+import Loader from '../loader/Loader';
 
 const ButtonLinkHOC = ButtonLink(Button);
 
 const UserWidget = ({ user }) => {
   const [userMenu, setUserMenu] = useState(false);
   const [avatarError, setAvatarError] = useState(false);
+  const loader = useSelector(getHeaderLoaderStatus);
   const dispatch = useDispatch();
   const history = useHistory();
   const userWidgetRef = useRef(null);
   const avatarRef = useRef(null);
 
   useEffect(() => {
-    if (!user.avatar) {
+    if (user && !user.avatar) {
       setAvatarError(true);
     }
-  }, [user.avatar]);
+  }, [user]);
 
   const handleOnClick = () => {
     setUserMenu(!userMenu);
@@ -52,6 +61,7 @@ const UserWidget = ({ user }) => {
 
   return (
     <Styled.UserWidget>
+      {loader && <Loader />}
       {user
         ? (
           <div ref={userWidgetRef}>

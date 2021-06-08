@@ -19,7 +19,7 @@ const Checkbox = ({ id, label, checked, onChange, ...rest }) => {
         {...rest}
       />
       <Styled.Checkmark />
-      {label && <Text>{label}</Text>}
+      {label && <Text size={14}>{label}</Text>}
     </Styled.Label>
   );
 };

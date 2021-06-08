@@ -24,10 +24,7 @@ const Search = () => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-
-    if (params?.search) {
-      dispatch(requestGetProducts());
-    }
+    dispatch(requestGetProducts());
   };
 
   return (
@@ -36,7 +33,6 @@ const Search = () => {
         id="Search"
         onChange={handleOnChange}
         placeholder="Search"
-        type="search"
         value={params.search}
       />
       <Styled.SearchButton category="transparent" id="SearchButton" onClick={handleOnSubmit} type="submit">

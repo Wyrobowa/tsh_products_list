@@ -4,9 +4,11 @@ import styled from 'styled-components';
 import Text from '../text/Text';
 
 export const ListItem = styled.div`
+  position: relative;
   flex-flow: column;
   justify-content: space-between;
   display: flex;
+  border-radius: 8px;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.white};
 `;
@@ -14,10 +16,10 @@ export const ListItem = styled.div`
 export const Box = styled.div`
   flex-flow: column;
   display: flex;
-  padding: 0 24px;
+  padding: 0 16px;
   
   &:last-of-type {
-    padding-bottom: 16px;
+    padding-bottom: 24px;
   }
 `;
 
@@ -46,5 +48,13 @@ export const TextField = styled(Text)`
 `;
 
 export const Image = styled.img`
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   width: 100%;
+`;
+
+export const Promo = styled.div`
+  position: absolute;
+  background-color: ${({ theme }) => theme.colors.orange};
+  color: ${({ theme }) => theme.colors.white};
 `;

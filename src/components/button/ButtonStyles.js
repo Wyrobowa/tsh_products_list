@@ -55,6 +55,7 @@ export const Button = styled.button`
   `}
   
   &:disabled {
+    cursor: not-allowed;
     border-color: ${({ theme }) => theme.colors.grey2};
     background-color: ${({ theme }) => theme.colors.grey2};
   }

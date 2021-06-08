@@ -4,6 +4,8 @@ export const REQUEST_LOGIN = 'REQUEST_LOGIN';
 export const CLEAR_LOGIN = 'CLEAR_LOGIN';
 export const SHOW_LOADER = 'SHOW_LOADER';
 export const HIDE_LOADER = 'HIDE_LOADER';
+export const SHOW_HEADER_LOADER = 'SHOW_HEADER_LOADER';
+export const HIDE_HEADER_LOADER = 'HIDE_HEADER_LOADER';
 
 export const loginSuccessful = payload => ({
   type: LOGIN_SUCCESSFUL,
@@ -29,4 +31,12 @@ export const showLoader = () => ({
 
 export const hideLoader = () => ({
   type: HIDE_LOADER,
+});
+
+export const showHeaderLoader = () => ({
+  type: SHOW_HEADER_LOADER,
+});
+
+export const hideHeaderLoader = () => ({
+  type: HIDE_HEADER_LOADER,
 });

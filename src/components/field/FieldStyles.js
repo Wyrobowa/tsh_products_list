@@ -5,6 +5,7 @@ export const Input = styled.input`
   border-radius: 8px;
   box-sizing: border-box;
   padding: 15px;
+  font-size: 14px;
   
   &:hover, &:focus {
     background-color: ${({ theme }) => theme.colors.grey};
@@ -26,4 +27,5 @@ export const Input = styled.input`
 
 export const Label = styled.label`
   margin-bottom: 8px;
+  font-size: 14px;
 `;

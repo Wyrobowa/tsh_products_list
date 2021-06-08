@@ -7,6 +7,7 @@ import Text from '../../components/text/Text';
 export const Layout = styled.div`
   display: flex;
   width: 100%;
+  min-height: 100vh;
 `;
 
 export const ImageWrapper = styled.div`

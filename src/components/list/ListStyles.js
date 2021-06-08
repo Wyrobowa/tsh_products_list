@@ -7,6 +7,6 @@ export const List = styled.div`
   display: grid;
 
   @media ${({ theme }) => theme.mediaQueries.mobile} {
-    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 `;

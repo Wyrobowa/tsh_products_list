@@ -28,3 +28,11 @@ export const Page = styled.div`
     margin-right: 0;
   }
 `;
+
+export const FirstPage = styled(Page)`
+  margin-right: 32px;
+`;
+
+export const LastPage = styled(Page)`
+  margin-left: 17px;
+`;

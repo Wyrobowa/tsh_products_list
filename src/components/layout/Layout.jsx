@@ -17,9 +17,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {loading && <OverlayLoader />}
       <Header />
-      <Styled.Container>{children}</Styled.Container>
+      <div>
+        {loading && <OverlayLoader />}
+        <Styled.Container>{children}</Styled.Container>
+      </div>
     </>
   );
 };

@@ -7,6 +7,7 @@ const initState = {
     errorMsg: null,
   },
   loaderStatus: false,
+  headerLoaderStatus: false,
 };
 
 const appStatus = (state = initState, action) => {
@@ -44,6 +45,16 @@ const appStatus = (state = initState, action) => {
         ...state,
         loaderStatus: false,
       };
+    case actions.SHOW_HEADER_LOADER:
+      return {
+        ...state,
+        headerLoaderStatus: true,
+      };
+    case actions.HIDE_HEADER_LOADER:
+      return {
+        ...state,
+        headerLoaderStatus: false,
+      };
     default:
       return state;
   }
@@ -51,5 +62,6 @@ const appStatus = (state = initState, action) => {
 
 export const getLoginStatus = state => state.appStatus.login;
 export const getLoaderStatus = state => state.appStatus.loaderStatus;
+export const getHeaderLoaderStatus = state => state.appStatus.headerLoaderStatus;
 
 export default appStatus;

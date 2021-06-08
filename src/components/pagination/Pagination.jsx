@@ -24,13 +24,13 @@ const Pagination = ({ data }) => {
 
   return (
     <Styled.Pagination>
-      <Styled.Page
+      <Styled.FirstPage
         data-page={1}
         disabled={data.currentPage === 1}
         onClick={handleOnClick}
       >
         First
-      </Styled.Page>
+      </Styled.FirstPage>
       {pagesList.map(page => (
         <Styled.Page
           data-page={page}
@@ -42,13 +42,13 @@ const Pagination = ({ data }) => {
           {page || '...'}
         </Styled.Page>
       ))}
-      <Styled.Page
+      <Styled.LastPage
         data-page={data.totalPages}
         disabled={data.currentPage === data.totalPages}
         onClick={handleOnClick}
       >
         Last
-      </Styled.Page>
+      </Styled.LastPage>
     </Styled.Pagination>
   );
 };

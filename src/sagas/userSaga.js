@@ -2,7 +2,7 @@ import { put, takeEvery, call } from 'redux-saga/effects';
 
 // Actions
 import * as actions from '../actions/userActions';
-import { hideLoader, showLoader } from '../actions/appStatusActions';
+import { hideHeaderLoader, showHeaderLoader } from '../actions/appStatusActions';
 
 // Services
 import { getData } from '../services/requestService';
@@ -11,14 +11,14 @@ export function* getUser() {
   const token = localStorage.getItem('bearerToken');
 
   try {
-    yield put(showLoader());
+    yield put(showHeaderLoader());
     const requestData = yield call(getData, token, 'users/me');
 
     yield put(actions.getUserSuccessful(requestData));
-    yield put(hideLoader());
+    yield put(hideHeaderLoader());
   } catch (error) {
     yield put(actions.getUserUnsuccessful());
-    yield put(hideLoader());
+    yield put(hideHeaderLoader());
   }
 }
 

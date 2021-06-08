@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   #root {
+    overflow-x: auto;
     min-width: ${breakpoints.mobile}px;
   }
 `;
