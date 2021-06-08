@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { requestGetProducts, setSearch } from '../../actions/productsActions';
 
 // Icons
-import icon from '../../common/icons/search.png';
+import icon from '../../common/icons/search.svg';
 
 // Reducers
 import { getParams } from '../../reducers/productsReducer';

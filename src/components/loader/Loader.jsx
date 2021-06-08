@@ -1,22 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+// Icons
+import icon from '../../common/icons/spinner.svg';
 
 // Styles
 import * as Styled from './LoaderStyles';
 
-const Loader = ({ className }) => (
-  <Styled.LoaderSpinner className={className}>
-    <Styled.Spinner />
-    <Styled.Spinner />
-  </Styled.LoaderSpinner>
+const Loader = () => (
+  <Styled.Loader src={icon} />
 );
-
-Loader.propTypes = {
-  className: PropTypes.string,
-};
-
-Loader.defaultProps = {
-  className: '',
-};
 
 export default Loader;

@@ -8,7 +8,7 @@ export const Input = styled.input`
   cursor: pointer;
   
   &:checked {
-    background-color: ${({ theme }) => theme.colors.grey2};
+    background-color: ${({ theme }) => theme.colors.blue};
   }
 `;
 
@@ -44,7 +44,7 @@ export const Label = styled.label`
   }
 
   ${Input}:checked ~ ${Checkmark} {
-    background-color: ${({ theme }) => theme.colors.grey2};
+    background-color: ${({ theme }) => theme.colors.blue};
   }
 
   ${Input}:checked ~ ${Checkmark}:after {
