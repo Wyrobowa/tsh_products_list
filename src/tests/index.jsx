@@ -7,9 +7,9 @@ import { ThemeProvider } from 'styled-components';
 
 // Common
 import { variables } from '../common/variables';
-import configureStore from '../configureStore';
 
-const store = configureStore();
+// Store
+import { store } from './testStore';
 
 const Wrapper = ({ children }) => {
   return (

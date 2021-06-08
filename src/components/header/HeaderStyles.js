@@ -15,6 +15,7 @@ export const Header = styled.header`
   @media ${({ theme }) => theme.mediaQueries.tablet} {
     height: 144px;
     padding: ${({ theme }) => theme.paddings.mainTablet};
+    padding-top: 20px;
   }
 
   @media ${({ theme }) => theme.mediaQueries.laptop} {
@@ -22,6 +23,7 @@ export const Header = styled.header`
     grid-template-areas:
         "logo filters login";
     padding: ${({ theme }) => theme.paddings.mainLaptop};
+    padding-top: 20px;
   }
   
   > * {
@@ -48,16 +50,4 @@ export const Title = styled(Link)`
   line-height: 40px;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.black2};
-`;
-
-export const User = styled.div`
-  grid-area: login;
-  justify-self: end;
-  align-self: center;
-  width: fit-content;
-  height: fit-content;
-`;
-
-export const Avatar = styled.img`
-  width: 48px;
 `;
