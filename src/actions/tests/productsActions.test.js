@@ -42,4 +42,4 @@ describe('productsActions', () => {
     };
     expect(actions.setPagination()).toEqual(expectedAction);
   });
-})
+});

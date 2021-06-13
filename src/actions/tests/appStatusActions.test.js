@@ -29,17 +29,45 @@ describe('appStatusActions', () => {
     expect(actions.clearLogin()).toEqual(expectedAction);
   });
 
-  it('should create an action to showLoader', () => {
+  it('should create an action to showContainerLoader', () => {
     const expectedAction = {
-      type: actions.SHOW_LOADER,
+      type: actions.SHOW_CONTAINER_LOADER,
     };
-    expect(actions.showLoader()).toEqual(expectedAction);
+    expect(actions.showContainerLoader()).toEqual(expectedAction);
   });
 
-  it('should create an action to hideLoader', () => {
+  it('should create an action to hideContainerLoader', () => {
     const expectedAction = {
-      type: actions.HIDE_LOADER,
+      type: actions.HIDE_CONTAINER_LOADER,
     };
-    expect(actions.hideLoader()).toEqual(expectedAction);
+    expect(actions.hideContainerLoader()).toEqual(expectedAction);
   });
-})
+
+  it('should create an action to showHeaderLoader', () => {
+    const expectedAction = {
+      type: actions.SHOW_HEADER_LOADER,
+    };
+    expect(actions.showHeaderLoader()).toEqual(expectedAction);
+  });
+
+  it('should create an action to hideHeaderLoader', () => {
+    const expectedAction = {
+      type: actions.HIDE_HEADER_LOADER,
+    };
+    expect(actions.hideHeaderLoader()).toEqual(expectedAction);
+  });
+
+  it('should create an action to showModalLoader', () => {
+    const expectedAction = {
+      type: actions.SHOW_MODAL_LOADER,
+    };
+    expect(actions.showModalLoader()).toEqual(expectedAction);
+  });
+
+  it('should create an action to hideModalLoader', () => {
+    const expectedAction = {
+      type: actions.HIDE_MODAL_LOADER,
+    };
+    expect(actions.hideModalLoader()).toEqual(expectedAction);
+  });
+});

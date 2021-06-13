@@ -28,4 +28,4 @@ describe('userActions', () => {
     };
     expect(actions.clearUser()).toEqual(expectedAction);
   });
-})
+});
