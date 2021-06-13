@@ -40,6 +40,7 @@ const products = (state = initState, action) => {
         params: {
           ...state.params,
           search: action.data,
+          page: null,
         },
       };
     case actions.SET_FILTERS:
@@ -48,6 +49,7 @@ const products = (state = initState, action) => {
         params: {
           ...state.params,
           [action.name]: action.data,
+          page: null,
         },
       };
     case actions.SET_PAGINATION:
