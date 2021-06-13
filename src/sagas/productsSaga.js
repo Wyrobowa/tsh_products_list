@@ -12,7 +12,7 @@ import { getParams } from '../reducers/productsReducer';
 // Services
 import { endpoints } from '../services/consts';
 import { getData } from '../services/requestService';
-import { hideLoader, showLoader } from '../actions/appStatusActions';
+import { hideContainerLoader, showContainerLoader } from '../actions/appStatusActions';
 
 export function* getProducts() {
   const token = localStorage.getItem('bearerToken');
@@ -20,14 +20,14 @@ export function* getProducts() {
   const requestQuery = buildRequestQuery(params);
 
   try {
-    yield put(showLoader());
+    yield put(showContainerLoader());
     const requestData = yield call(getData, token, endpoints.products, requestQuery);
 
     yield put(actions.getProductsSuccessful(requestData));
-    yield put(hideLoader());
+    yield put(hideContainerLoader());
   } catch (error) {
     yield put(actions.getProductsUnsuccessful());
-    yield put(hideLoader());
+    yield put(hideContainerLoader());
   }
 }
 

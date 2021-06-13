@@ -16,7 +16,7 @@ export const Checkmark = styled.span`
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid ${({ theme }) => theme.colors.grey4};
+  border: 1px solid ${({ theme }) => theme.colors.grey3};
   border-radius: 4px;
   box-sizing: border-box;
   height: 24px;

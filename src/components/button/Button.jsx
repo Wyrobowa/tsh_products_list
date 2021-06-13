@@ -19,7 +19,7 @@ const Button = ({ category, children, id, onClick, type, ...rest }) => {
 };
 
 Button.propTypes = {
-  category: PropTypes.oneOf(['primary', 'secondary', 'login', 'search', 'transparent']),
+  category: PropTypes.oneOf(['primary', 'dropdownItem', 'login', 'search', 'transparent', 'close']),
   children: PropTypes.node,
   id: PropTypes.string.isRequired,
   onClick: PropTypes.func,

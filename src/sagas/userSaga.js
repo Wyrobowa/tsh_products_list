@@ -6,13 +6,14 @@ import { hideHeaderLoader, showHeaderLoader } from '../actions/appStatusActions'
 
 // Services
 import { getData } from '../services/requestService';
+import { endpoints } from '../services/consts';
 
 export function* getUser() {
   const token = localStorage.getItem('bearerToken');
 
   try {
     yield put(showHeaderLoader());
-    const requestData = yield call(getData, token, 'users/me');
+    const requestData = yield call(getData, token, endpoints.loggedInUser);
 
     yield put(actions.getUserSuccessful(requestData));
     yield put(hideHeaderLoader());

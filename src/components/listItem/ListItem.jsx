@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Common
@@ -18,6 +18,7 @@ const ButtonLinkHOC = ButtonLink(Button);
 
 const ListItem = ({ item }) => {
   const history = useHistory();
+  const location = useLocation();
 
   return (
     <Styled.ListItem>
@@ -28,7 +29,7 @@ const ListItem = ({ item }) => {
           <Styled.TextField bold size={18}>
             {item.name}
           </Styled.TextField>
-          <Styled.TextField color={variables.colors.grey2} size={14}>
+          <Styled.TextField color={variables.colors.grey5} size={14}>
             {item.description}
           </Styled.TextField>
         </Styled.Box>
@@ -40,7 +41,10 @@ const ListItem = ({ item }) => {
           disabled={!item.active}
           history={history}
           id={`ProductItem-${item.id}`}
-          to="/product"
+          to={{
+            pathname: `/product/${item.id}`,
+            state: { background: location },
+          }}
         >
           {item.active ? 'Show details' : 'Unavailable'}
         </ButtonLinkHOC>

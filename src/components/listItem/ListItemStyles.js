@@ -52,9 +52,3 @@ export const Image = styled.img`
   border-top-right-radius: 8px;
   width: 100%;
 `;
-
-export const Promo = styled.div`
-  position: absolute;
-  background-color: ${({ theme }) => theme.colors.orange};
-  color: ${({ theme }) => theme.colors.white};
-`;

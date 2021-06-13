@@ -14,7 +14,7 @@ export const Page = styled.div`
   
   ${({ theme, disabled }) => disabled && `
     cursor: default;
-    color: ${theme.colors.grey2};
+    color: ${theme.colors.grey5};
     pointer-events: none;
   `}
   

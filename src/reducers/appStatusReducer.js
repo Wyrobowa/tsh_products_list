@@ -8,6 +8,7 @@ const initState = {
   },
   loaderStatus: false,
   headerLoaderStatus: false,
+  modalLoaderStatus: false,
 };
 
 const appStatus = (state = initState, action) => {
@@ -35,12 +36,12 @@ const appStatus = (state = initState, action) => {
           ...initState.login,
         },
       };
-    case actions.SHOW_LOADER:
+    case actions.SHOW_CONTAINER_LOADER:
       return {
         ...state,
         loaderStatus: true,
       };
-    case actions.HIDE_LOADER:
+    case actions.HIDE_CONTAINER_LOADER:
       return {
         ...state,
         loaderStatus: false,
@@ -55,6 +56,16 @@ const appStatus = (state = initState, action) => {
         ...state,
         headerLoaderStatus: false,
       };
+    case actions.SHOW_MODAL_LOADER:
+      return {
+        ...state,
+        modalLoaderStatus: true,
+      };
+    case actions.HIDE_MODAL_LOADER:
+      return {
+        ...state,
+        modalLoaderStatus: false,
+      };
     default:
       return state;
   }
@@ -63,5 +74,6 @@ const appStatus = (state = initState, action) => {
 export const getLoginStatus = state => state.appStatus.login;
 export const getLoaderStatus = state => state.appStatus.loaderStatus;
 export const getHeaderLoaderStatus = state => state.appStatus.headerLoaderStatus;
+export const getModalLoaderStatus = state => state.appStatus.modalLoaderStatus;
 
 export default appStatus;

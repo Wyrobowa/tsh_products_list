@@ -18,10 +18,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <div>
-        {loading && <OverlayLoader />}
+      <Styled.ContainerWrapper>
+        {loading && <OverlayLoader depth="content" />}
         <Styled.Container>{children}</Styled.Container>
-      </div>
+      </Styled.ContainerWrapper>
     </>
   );
 };

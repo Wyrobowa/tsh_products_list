@@ -29,7 +29,7 @@ const ButtonLinkHOC = ButtonLink(Button);
 const UserWidget = ({ user }) => {
   const [userMenu, setUserMenu] = useState(false);
   const [avatarError, setAvatarError] = useState(false);
-  const loader = useSelector(getHeaderLoaderStatus);
+  const loading = useSelector(getHeaderLoaderStatus);
   const dispatch = useDispatch();
   const history = useHistory();
   const userWidgetRef = useRef(null);
@@ -61,7 +61,7 @@ const UserWidget = ({ user }) => {
 
   return (
     <Styled.UserWidget>
-      {loader && <Loader />}
+      {loading && <Loader />}
       {user
         ? (
           <div ref={userWidgetRef}>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Input = styled.input`
-  border: 1px solid ${({ theme }) => theme.colors.grey4};
+  border: 1px solid ${({ theme }) => theme.colors.grey3};
   border-radius: 8px;
   box-sizing: border-box;
   padding: 15px;
@@ -12,16 +12,16 @@ export const Input = styled.input`
   }
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.grey2};
+    color: ${({ theme }) => theme.colors.grey5};
     opacity: 1;
   }
 
   &:-ms-input-placeholder {
-    color: ${({ theme }) => theme.colors.grey2};
+    color: ${({ theme }) => theme.colors.grey5};
   }
 
   &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.colors.grey2};
+    color: ${({ theme }) => theme.colors.grey5};
   }
 `;
 

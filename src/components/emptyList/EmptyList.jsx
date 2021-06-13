@@ -18,7 +18,7 @@ const EmptyList = () => {
       <Styled.Box>
         <Styled.Image src={image} alt="Empty list" />
         <Text size={18}>Ooops… It’s empty here</Text>
-        <Text size={14} color={variables.colors.grey2}>There are no products on the list</Text>
+        <Text size={14} color={variables.colors.grey5}>There are no products on the list</Text>
       </Styled.Box>
     </Styled.EmptyList>
   );

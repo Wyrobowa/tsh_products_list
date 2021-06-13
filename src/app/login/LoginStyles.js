@@ -65,5 +65,5 @@ export const Title = styled(Text)`
 
 export const ForgotPasswordLink = styled(Link)`
   font-size: 14px;
-  color: ${({ theme }) => theme.colors.grey2};
+  color: ${({ theme }) => theme.colors.grey5};
 `;

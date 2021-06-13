@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const ContainerWrapper = styled.div`
+  position: relative;
+`;
+
 export const Container = styled.div`
   padding: ${({ theme }) => theme.paddings.mainMobile};
   padding-top: 55px;

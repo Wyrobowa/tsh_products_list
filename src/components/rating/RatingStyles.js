@@ -6,7 +6,7 @@ export const Star = styled.span`
   
   &:before {
     content: "\\2606";
-    color: ${({ theme }) => theme.colors.grey3};
+    color: ${({ theme }) => theme.colors.grey4};
   }
 
   ${({ theme, checked }) => checked && `

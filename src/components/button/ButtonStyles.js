@@ -40,6 +40,21 @@ export const Button = styled.button`
     }
   `}
   
+  ${({ theme, category }) => category && category === 'close' && `
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+    padding: 10px;
+    background-color: ${theme.colors.grey2};
+    color: ${theme.colors.black2};
+    
+    &:hover {
+      background-color: ${theme.colors.grey3};
+      color: ${theme.colors.black2};
+    }
+  `}
+  
   ${({ theme, category }) => category && category === 'dropdownItem' && `
     border: none;
     width: 100%;
@@ -56,7 +71,7 @@ export const Button = styled.button`
   
   &:disabled {
     cursor: not-allowed;
-    border-color: ${({ theme }) => theme.colors.grey2};
-    background-color: ${({ theme }) => theme.colors.grey2};
+    border-color: ${({ theme }) => theme.colors.grey5};
+    background-color: ${({ theme }) => theme.colors.grey5};
   }
 `;
