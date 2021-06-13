@@ -10,6 +10,19 @@ export const store = createStore(rootReducer, {
       errorMsg: null,
     },
     loaderStatus: false,
+    headerLoaderStatus: false,
+    modalLoaderStatus: false,
+  },
+  product: {
+    product: {
+      id: 1,
+      name: 'Ergonomic Concrete Shirt',
+      description: 'Deleniti aliquid consequatur.',
+      rating: 5,
+      image: 'https://picsum.photos/640/480?random=272',
+      promo: false,
+      active: true,
+    },
   },
   products: {
     products: [
